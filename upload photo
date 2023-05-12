@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aploadimage</title>
+    <style>
+
+input{
+    display: none;
+}
+label{
+    display: block;
+    width: 200px;
+    background: #e3362c;
+    color: #fff;
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#photo{
+    width: 400px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: #333;
+    margin-top: 100px;
+}
+#photo h2{
+    font-weight: 500;
+    color: #000;
+}
+img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+    </style>
+</head>
+<body style="background-color: #333;"><center>
+            <div id="conteiner">
+                <div id="photo">
+                    <h2 id="name"></h2>
+                    <p id="email"></p>
+                    
+                    <img src="download.png" id="profile-pic">
+                    <label for="input-file" onclick="apload()">upload your image</label>
+                    <input type="file" accept="image/jpeg, image/png, image/jpg,video/mp4" id="input-file" >
+                </div>
+            </div>
+        </center>
+       </body>
+<script>
+let profilepic =document.getElementById("profile-pic");
+let inputfile =document.getElementById("input-file");
+inputfile.onchange= function(){
+profilepic.src=URL.createObjectURL(inputfile.files[0]);
+}
+</script>
+<script>
+    let a=prompt("enter your name");
+    let b=prompt("enter your email");
+    document.write(a);
+    document.write("<br>");
+    document.write(b);
+</script>
+</html>
